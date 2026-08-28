@@ -276,45 +276,45 @@ footer {
         Submit it for consideration.
     </p>
 
-    <form>
+    <form action="https://formspree.io/f/xeaqqqzp" method="POST">
 
         <label>
             LEVEL NAME
-            <input type="text" placeholder="Level name">
+            <input type="text" name="Level Name" placeholder="Level name" required>
         </label>
 
         <label>
             LEVEL ID
-            <input type="text" placeholder="12345678">
+            <input type="text" name="Level ID" placeholder="12345678" required>
         </label>
 
         <label>
             CREATOR
-            <input type="text" placeholder="Creator name">
+            <input type="text" name="Creator" placeholder="Creator name" required>
         </label>
 
         <label>
             VERIFIER
-            <input type="text" placeholder="Verifier name">
+            <input type="text" name="Verifier" placeholder="Verifier name" required>
         </label>
 
         <label>
             VERIFICATION VIDEO
-            <input type="url" placeholder="https://youtube.com/...">
+           <input type="url" name="Verification Video" placeholder="https://youtube.com/..." required>
         </label>
 
         <label>
             ESTIMATED PLACEMENT
-            <input type="text" placeholder="#10">
+            <input type="text" name="Estimated Placement" placeholder="#10">
         </label>
 
         <label>
             ADDITIONAL INFORMATION
-            <textarea rows="5"
-            placeholder="Anything the list team should know..."></textarea>
+      <textarea name="Additional Information" rows="5"
+placeholder="Anything the list team should know..."></textarea>
         </label>
 
-        <button class="button" type="button">
+        <button class="button" type="submit">
             SUBMIT LEVEL
         </button>
 
