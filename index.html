@@ -380,32 +380,62 @@ placeholder="Anything the list team should know..."></textarea>
 
 
 <script>
+const levels = [
+    // ADD YOUR LEVELS HERE
+
+    {
+        rank: 1,
+        name: "Example Level",
+        creator: "ExampleCreator",
+        verifier: "ExampleVerifier",
+        video: "https://youtube.com/"
+    }
+];
 
 const levelList = document.getElementById("levelList");
 
-for (let i = 1; i <= 50; i++) {
+for (let rank = 1; rank <= 50; rank++) {
 
     const level = document.createElement("div");
-
     level.className = "level";
 
-    level.innerHTML = `
-        <div class="rank">#${i}</div>
+    const levelData = levels.find(item => item.rank === rank);
 
-        <div>
-            <div class="level-name">
-                Level Coming Soon
-            </div>
+    if (levelData) {
+        level.innerHTML = `
+            <div class="rank">#${rank}</div>
 
-            <div class="meta">
-                Creator — • Verifier —
+            <div>
+                <div class="level-name">
+                    <a href="${levelData.video}" target="_blank"
+                    style="color:white;text-decoration:none;">
+                        ${levelData.name}
+                    </a>
+                </div>
+
+                <div class="meta">
+                    Creator — ${levelData.creator} • Verifier — ${levelData.verifier}
+                </div>
             </div>
-        </div>
-    `;
+        `;
+    } else {
+        level.innerHTML = `
+            <div class="rank">#${rank}</div>
+
+            <div>
+                <div class="level-name">
+                    Level Coming Soon
+                </div>
+
+                <div class="meta">
+                    Creator — • Verifier —
+                </div>
+            </div>
+        `;
+    }
 
     levelList.appendChild(level);
 }
-
 </script>
 
 </body>
